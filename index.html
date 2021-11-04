@@ -176,7 +176,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-11-04 19:49:25" itemprop="dateModified" datetime="2021-11-04T19:49:25+08:00">2021-11-04</time>
+                <time title="修改时间：2021-11-04 19:54:01" itemprop="dateModified" datetime="2021-11-04T19:54:01+08:00">2021-11-04</time>
               </span>
 
           
@@ -199,26 +199,27 @@
 <h1 id="GitHub与jsDelivr"><a href="#GitHub与jsDelivr" class="headerlink" title="GitHub与jsDelivr"></a>GitHub与jsDelivr</h1><p>jsDelivr是一款极为方便的免费cdn，使用它我们可以较为快速的从GitHub上获取我们上传的图片(因为GitHub本身在国外，正常的访问会较为缓慢并且不稳定)。</p>
 <p><a target="_blank" rel="noopener" href="https://www.jsdelivr.com/">jsDelivr</a></p>
 <h2 id="新建仓库"><a href="#新建仓库" class="headerlink" title="新建仓库"></a>新建仓库</h2><p>在上一节中想必大家都已经创建了GitHub账户<del>废话</del>，那么现在我们需要新建一个仓库用来存放我们上传的图片。</p>
-<p><img src="C:\Users\YellowFat\Documents\cdn\cdn\hexo_images\new_reopo.png" alt="new_reopo"></p>
-<p><img src="C:\Users\YellowFat\Documents\cdn\cdn\hexo_images\creat_repo.png" alt="creat_repo"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/FatYellow/cdn/images/new_reopo.png" alt="new_reopo"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/FatYellow/cdn/images/creat_repo.png" alt="creat_repo"></p>
 <p>这里添加README文件是方便下面克隆库进行上传。</p>
-<h1 id="克隆库"><a href="#克隆库" class="headerlink" title="克隆库"></a>克隆库</h1><p><img src="C:\Users\YellowFat\Documents\cdn\cdn\hexo_images\ssh_link.png" alt="ssh_link"></p>
+<h1 id="克隆库"><a href="#克隆库" class="headerlink" title="克隆库"></a>克隆库</h1><p><img src="https://cdn.jsdelivr.net/gh/FatYellow/cdn/images/ssh_link.png" alt="ssh_link"></p>
 <p>复制ssh链接。</p>
-<p><img src="C:\Users\YellowFat\Documents\cdn\cdn\hexo_images\new_filebase.png" alt="new_filebase"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/FatYellow/cdn/images/new_filebase.png" alt="new_filebase"></p>
 <p>找个地方新建一个文件夹，依然不建议新建在C盘，防止权限问题。</p>
 <p>在该目录下右键，选择<code>Git Bash Here</code><del>因为GUI看不懂</del>，运行以下指令。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> git@github.com:FatYellow/cdn.git <span class="comment">#后面的地址是你刚刚复制的ssh链接</span></span><br></pre></td></tr></table></figure>
 
-<p><img src="C:\Users\YellowFat\Documents\cdn\cdn\hexo_images\creat_loca.png" alt="creat_loca"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/FatYellow/cdn/images/creat_loca.png" alt="creat_loca"></p>
 <p>然后我们就可以看到我们GitHub上面的库就被clone下来了，我们再在其中新建一个<code>images</code>文件夹便于管理。(也可自行修改名字，不建议使用中文)</p>
 <h1 id="上传文件"><a href="#上传文件" class="headerlink" title="上传文件"></a>上传文件</h1><p>在新建的文件夹中运行<code>Git Bash Here</code>，输入以下指令。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add *                  <span class="comment">#将该目录下文件加入缓冲区</span></span><br><span class="line">git commit -m <span class="string">&#x27;新建文件夹&#x27;</span>  <span class="comment">#添加更新信息</span></span><br><span class="line">git push                  <span class="comment">#将更新推送到GitHub</span></span><br></pre></td></tr></table></figure>
 
 <p>运行结束后我们打开我们的GitHub可以发现我们的库中已经新增了我们加上的文件夹。</p>
-<h1 id="发布仓库"><a href="#发布仓库" class="headerlink" title="发布仓库"></a>发布仓库</h1><p><img src="D:\hexo_cdn\cdn\images\push_release.png" alt="push_release"></p>
+<h1 id="发布仓库"><a href="#发布仓库" class="headerlink" title="发布仓库"></a>发布仓库</h1><p><img src="https://cdn.jsdelivr.net/gh/FatYellow/cdn/images/push_release.png" alt="push_release"></p>
 <p>标签可以任填，但是每一次发布的标签不能重复(至少我找不到方法解决这个问题)。发布的标题可以是<code>repositoryname-v版本号</code>其中<code>repositoryname</code>是你这个仓库的名字，版本号格式为1.0、1.1等，<code>Publish release</code>后就可以通过以下链接访问你的cdn加速内容了。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://cdn.jsdelivr.net/gh/username/repositoryname@releaseversion/path <span class="comment">#username为你的GitHub用户名，repositoryname是你的仓库名，releaseversion是你的版本号(1.0)，path是你的文件路径。此处路径为相对路径，例如默认执行处在readme所在的根目录下，那么假如我们需要读取该目录下的readme文件，我们只需要将path替换成readme.md即可。</span></span><br></pre></td></tr></table></figure>
 
+<h2 id="P-S"><a href="#P-S" class="headerlink" title="P.S"></a>P.S</h2><p>事实上不填写版本号也可以，这样子jsDelivr会自动抓取你最近一个发布的的版本。<del>事实上我不知道为什么我加上版本号就会报错</del></p>
 
       
     </div>
